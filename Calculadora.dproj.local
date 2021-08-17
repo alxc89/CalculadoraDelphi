@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/08/12 22:13:58.000.855,=C:\Users\alexc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/08/12 22:16:58.000.448,D:\Codar\Delphi\Calculadora\src\Calc.dfm=C:\Users\alexc\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/08/12 22:16:58.000.448,D:\Codar\Delphi\Calculadora\src\Calc.pas=C:\Users\alexc\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/08/12 22:17:07.000.169,D:\Codar\Delphi\Calculadora\Calculadora.dproj=C:\Users\alexc\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/08/17 10:24:01.000.924,=C:\Users\supor\Documents\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2021/08/17 10:29:40.000.841,C:\Users\supor\Documents\Calculadora\Unit1.pas=C:\Users\supor\Documents\Calculadora\src\nfuncoes.pas</Transaction>
+  </Transactions>
+</BorlandProject>

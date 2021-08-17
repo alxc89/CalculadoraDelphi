@@ -1,0 +1,23 @@
+unit nfuncoes;
+
+interface
+
+uses
+  System.SysUtils, System.Variants;
+
+function calcular():double;
+
+implementation
+
+Function TForm1.calcular():double;
+begin
+  case operador of
+    '+' : Result := PrimeiroNumero + SegundoNumero;
+    '-' : Result := PrimeiroNumero - SegundoNumero;
+    '*' : Result := PrimeiroNumero * SegundoNumero;
+    '/' : Result := PrimeiroNumero / SegundoNumero;
+  end;
+  PrimeiroNumero := Result;
+end;
+
+end.
