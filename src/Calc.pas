@@ -120,6 +120,11 @@ procedure TForm1.btnMenosClick(Sender: TObject);
 begin
 
   if Operador <> '' then begin
+    if Operador <> '-' then begin
+    Operador:= '-';
+    SegundoNumero:= 0;
+    exit
+    end;
     Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
     panelDisplay.Caption:= FloatToStr(Resultado);
     PrimeiroNumero:= Resultado;
@@ -142,7 +147,7 @@ begin
   panelDisplay.Caption:= '0';
   PrimeiroNumero:= 0;
   SegundoNumero:= 0;
-  Operador:= ' ';
+  Operador:= #0;
   Resultado:= 0;
 end;
 

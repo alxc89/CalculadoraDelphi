@@ -4,14 +4,14 @@ interface
 
 uses
   System.SysUtils, System.Variants;
-Function Calcular(Nro1, Nro2:double; Operador:char):double;
+Function Calcular(Nro1, Nro2:double; Operador: Char):double;
 Function Montadisplay(ValorAtual, NovoDigito : string):string;
 
 implementation
 
-Function Calcular(Nro1, Nro2:double; Operador:char):double;
+Function Calcular(Nro1, Nro2:double; Operador: Char):double;
 begin
-  case operador of
+  case Operador of
     '+' : Result := Nro1 + Nro2;
     '-' : Result := Nro1 - Nro2;
     '*' : Result := Nro1 * Nro2;
