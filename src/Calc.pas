@@ -58,6 +58,7 @@ procedure TForm1.addNumero(Sender: TObject);
 begin
 
   if Resultado <> 0 then begin
+    SegundoNumero:= StrToFloat(TButton(Sender).Caption);
     panelDisplay.Caption:= FloatToStr(SegundoNumero);
     exit
   end;
@@ -72,27 +73,41 @@ end;
 
 procedure TForm1.btnDividirClick(Sender: TObject);
 begin
-  PrimeiroNumero:= StrToFloat(panelDisplay.Caption);
+  if Operador <> '' then begin
+    if Operador <> '/' then begin
+      Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
+      panelDisplay.Caption:= FloatToStr(Resultado);
+      PrimeiroNumero:= Resultado;
+      Operador:= '/';
+      SegundoNumero:= 0;
+      exit
+    end;
+    Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
+    panelDisplay.Caption:= FloatToStr(Resultado);
+    PrimeiroNumero:= Resultado;
+    Operador:= '/';
+    exit;
+  end;
+
   Operador:= '/';
   panelDisplay.Caption:= '0';
 end;
 
 procedure TForm1.btnIgualClick(Sender: TObject);
-var
-  Resultado : double;
+
 begin
   if (PrimeiroNumero = 0) and (SegundoNumero = 0)then begin
     panelDisplay.Caption:= '0';
     exit;
   end;
 
-  SegundoNumero:= StrToFloat(panelDisplay.Caption);
-
   Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
 
   panelDisplay.Caption:= FloatToStr(Resultado);
 
   PrimeiroNumero:= Resultado;
+  SegundoNumero:= 0;
+  Operador:= #0;
 end;
 
 procedure TForm1.btnLimparClick(Sender: TObject);
@@ -105,6 +120,14 @@ procedure TForm1.btnMaisClick(Sender: TObject);
 begin
 
   if Operador <> '' then begin
+    if Operador <> '+' then begin
+      Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
+      panelDisplay.Caption:= FloatToStr(Resultado);
+      PrimeiroNumero:= Resultado;
+      Operador:= '+';
+      SegundoNumero:= 0;
+      exit
+    end;
     Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
     panelDisplay.Caption:= FloatToStr(Resultado);
     PrimeiroNumero:= Resultado;
@@ -121,6 +144,9 @@ begin
 
   if Operador <> '' then begin
     if Operador <> '-' then begin
+    Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
+    panelDisplay.Caption:= FloatToStr(Resultado);
+    PrimeiroNumero:= Resultado;
     Operador:= '-';
     SegundoNumero:= 0;
     exit
@@ -137,7 +163,22 @@ end;
 
 procedure TForm1.btnVezesClick(Sender: TObject);
 begin
-  PrimeiroNumero:= StrToFloat(panelDisplay.Caption);
+    if Operador <> '' then begin
+      if Operador <> '*' then begin
+        Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
+        panelDisplay.Caption:= FloatToStr(Resultado);
+        PrimeiroNumero:= Resultado;
+        Operador:= '*';
+        SegundoNumero:= 0;
+        exit
+      end;
+    Resultado:= Calcular(PrimeiroNumero, SegundoNumero, Operador);
+    panelDisplay.Caption:= FloatToStr(Resultado);
+    PrimeiroNumero:= Resultado;
+    Operador:= '*';
+    exit;
+  end;
+
   Operador:= '*';
   panelDisplay.Caption:= '0';
 end;
